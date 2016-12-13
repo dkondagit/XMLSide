@@ -1,4 +1,4 @@
-package Test;
+package xml.test;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import xml.marshaller.XMLUnmarshaller;
 public class Main {
 
     public static void main(String[] args) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, ParserConfigurationException, TransformerConfigurationException, TransformerException, SAXException, IOException {
-        testSub testSub = new testSub(78);
+        TestSub testSub = new TestSub(78);
         Test test = new Test(2, "checking it up", testSub);
         List<Test> list = new ArrayList<>();
         List<List<Test>> listIn = new LinkedList<>();

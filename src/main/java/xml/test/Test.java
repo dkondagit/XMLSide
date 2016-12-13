@@ -1,12 +1,12 @@
-package Test;
+package xml.test;
 
 public class Test {
 
     private int firstField;
-    testSub classField;
+    TestSub classField;
     String stringField;
 
-    public Test(int a, String str, testSub i) {
+    public Test(int a, String str, TestSub i) {
         this.firstField = a;
         this.stringField = str;
         classField = i;
