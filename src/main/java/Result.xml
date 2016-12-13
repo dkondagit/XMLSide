@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TestList type="java.util.ArrayList">
+    <element type="java.util.LinkedList">
+        <element type="java.util.ArrayList">
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+        </element>
+        <element type="java.util.ArrayList">
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+        </element>
+    </element>
+    <element type="java.util.LinkedList">
+        <element type="java.util.ArrayList">
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+        </element>
+        <element type="java.util.ArrayList">
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+        </element>
+    </element>
+    <element type="java.util.LinkedList">
+        <element type="java.util.ArrayList">
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+        </element>
+        <element type="java.util.ArrayList">
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+            <element type="Test.Test">
+                <firstField>2</firstField>
+                <classField type="Test.testSub">
+                    <innerInt>78</innerInt>
+                </classField>
+                <stringField>checking it up</stringField>
+            </element>
+        </element>
+    </element>
+</TestList>
