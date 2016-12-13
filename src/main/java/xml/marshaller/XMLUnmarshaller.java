@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Stack;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -31,6 +32,7 @@ public class XMLUnmarshaller {
         convertMap.put(int.class, (Converter) (String ob) -> Integer.parseInt(ob));
         convertMap.put(Byte.class, (Converter) (String ob) -> Byte.parseByte(ob));
         convertMap.put(Long.class, (Converter) (String ob) -> Long.getLong(ob));
+        convertMap.put(double.class, (Converter) (String ob) -> Double.parseDouble(ob));
         //fill it 
     }
 
@@ -38,6 +40,14 @@ public class XMLUnmarshaller {
 
     private static boolean isNumberExtender(Class<?> objToCheck) {
         return Number.class.isAssignableFrom(objToCheck);
+    }
+
+    private static boolean isCharacterExtender(Class<?> objToCheck) {
+        return Character.class.isAssignableFrom(objToCheck);
+    }
+
+    private static boolean isMapEntry(Object objToCheck) {
+        return (objToCheck instanceof MapEntry);
     }
 
     private static boolean isStringExtender(Class<?> classToCheck) {
@@ -63,14 +73,22 @@ public class XMLUnmarshaller {
                         Object object;
 //Добавится ещё обработка Строк и char (Примитивов + String)
                         if (isNumberExtender(clazz)) {
-                            Constructor<?> plainConstructor = clazz.getDeclaredConstructor(String.class);
-                            object = plainConstructor.newInstance("0");// Когда наткнемся нa characters - заменим на реальное значение
+                            object = clazz.getDeclaredConstructor(String.class).newInstance("0");// Когда наткнемся нa characters - заменим на реальное значение
                             curValue = qName;
                         } else {
-                            Constructor<?> plainConstructor = clazz.getDeclaredConstructor();
-                            plainConstructor.setAccessible(true);
-                            object = plainConstructor.newInstance();
-                            plainConstructor.setAccessible(false);
+                            if (isStringExtender(clazz)) {
+                                object = clazz.getDeclaredConstructor().newInstance();
+                                curValue = qName;
+                            } else {
+                                if (Entry.class.isAssignableFrom(clazz)) {
+                                    object = new MapEntry();
+                                } else {
+                                    Constructor<?> plainConstructor = clazz.getDeclaredConstructor();
+                                    plainConstructor.setAccessible(true);
+                                    object = plainConstructor.newInstance();
+                                    plainConstructor.setAccessible(false);
+                                }
+                            }
                         }
                         stackBuilder.push(object);
                     } catch (Exception e) {
@@ -86,35 +104,33 @@ public class XMLUnmarshaller {
                 if (curValue != null) {
                     curValue = null;
                 } else {
-                    Object lastElem;
-                    if (!stackBuilder.isEmpty()) {
-                        lastElem = stackBuilder.pop();
-                    } else {
-                        return;
-                    }
-                    if (!stackBuilder.isEmpty()) {
+                    if (stackBuilder.size() > 1) {
+                        Object lastElem = stackBuilder.pop();
                         Object preLastElem = stackBuilder.pop();
                         if (preLastElem instanceof Collection<?>) {
                             ((Collection<Object>) preLastElem).add(lastElem);
-                            stackBuilder.push(preLastElem);
                         } else {
                             if (preLastElem instanceof Map<?, ?>) {
-                                //
+                                ((Map<Object, Object>) preLastElem).put(((MapEntry) lastElem).getKey(), ((MapEntry) lastElem).getValue());
                             } else {
-                                try {
-                                    Field field = preLastElem.getClass().getDeclaredField(qName);
-                                    field.setAccessible(true);
-                                    field.set(preLastElem, lastElem);
-                                    field.setAccessible(false);
-                                    stackBuilder.push(preLastElem);
-                                } catch (Exception ex) {
-//
+                                if (isMapEntry(preLastElem)) {
+                                    if (((MapEntry) preLastElem).getKey() == null) {
+                                        ((MapEntry) preLastElem).setKey(lastElem);
+                                    } else {
+                                        ((MapEntry) preLastElem).setValue(lastElem);
+                                    }
+                                } else {
+                                    try {
+                                        Field field = preLastElem.getClass().getDeclaredField(qName);
+                                        field.setAccessible(true);
+                                        field.set(preLastElem, lastElem);
+                                        field.setAccessible(false);
+                                    } catch (Exception ex) {
+                                    }
                                 }
                             }
                         }
-                    } else {
-                        //
-                        stackBuilder.push(lastElem);
+                        stackBuilder.push(preLastElem);
                     }
                 }
             }
@@ -127,7 +143,7 @@ public class XMLUnmarshaller {
                     try {
                         Object lastElem = stackBuilder.pop();
                         //Добавить остальные примитивы
-                        if (isNumberExtender(lastElem.getClass())) {
+                        if (isNumberExtender(lastElem.getClass()) || isStringExtender(lastElem.getClass())) {
                             Constructor<?> plainConstructor = lastElem.getClass().getDeclaredConstructor(String.class);
                             lastElem = plainConstructor.newInstance(tvalue);
                             curValue = null;
@@ -137,6 +153,7 @@ public class XMLUnmarshaller {
                             field.setAccessible(true);
                             field.set(lastElem, convertMap.get(field.getType()).method(tvalue));
                             field.setAccessible(false);
+
                         }
                         stackBuilder.push(lastElem);
                     } catch (Exception ex) {
@@ -144,8 +161,8 @@ public class XMLUnmarshaller {
                 }
             }
         };
-
-        saxParser.parse(new File(filePath), handler);
+        saxParser.parse(
+                new File(filePath), handler);
         return stackBuilder.pop();
     }
 

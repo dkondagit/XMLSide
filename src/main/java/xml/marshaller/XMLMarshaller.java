@@ -42,7 +42,6 @@ public final class XMLMarshaller {
         for (Entry<Object, Object> collectionElem : ((Map<Object, Object>) mapToMarshall).entrySet()) {
             Element entry = doc.createElement("entry");
             entry.setAttribute("type", collectionElem.getClass().getName());
-
             entry.appendChild(marshallObject(collectionElem.getKey(), "key", doc));
 
             entry.appendChild(marshallObject(collectionElem.getValue(), "value", doc));

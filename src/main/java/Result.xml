@@ -1,104 +1,175 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><TestList type="java.util.ArrayList">
-    <element type="java.util.LinkedList">
-        <element type="java.util.ArrayList">
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-        </element>
-        <element type="java.util.ArrayList">
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-        </element>
-    </element>
-    <element type="java.util.LinkedList">
-        <element type="java.util.ArrayList">
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-        </element>
-        <element type="java.util.ArrayList">
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-        </element>
-    </element>
-    <element type="java.util.LinkedList">
-        <element type="java.util.ArrayList">
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-        </element>
-        <element type="java.util.ArrayList">
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-            <element type="Test.Test">
-                <firstField>2</firstField>
-                <classField type="Test.testSub">
-                    <innerInt>78</innerInt>
-                </classField>
-                <stringField>checking it up</stringField>
-            </element>
-        </element>
-    </element>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TestList type="java.util.HashMap">
+    <entry type="java.util.HashMap$Node">
+        <key type="java.lang.String">hd</key>
+        <value type="java.util.HashMap">
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie1</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+        </value>
+    </entry>
+    <entry type="java.util.HashMap$Node">
+        <key type="java.lang.String">ht</key>
+        <value type="java.util.HashMap">
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie1</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+        </value>
+    </entry>
+    <entry type="java.util.HashMap$Node">
+        <key type="java.lang.String">he</key>
+        <value type="java.util.HashMap">
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie1</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+        </value>
+    </entry>
+    <entry type="java.util.HashMap$Node">
+        <key type="java.lang.String">hf</key>
+        <value type="java.util.HashMap">
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+            <entry type="java.util.HashMap$Node">
+                <key type="java.lang.String">lie1</key>
+                <value type="java.util.ArrayList">
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                    <element type="xml.test.Test">
+                        <firstField>2.4</firstField>
+                        <classField type="xml.test.TestSub">
+                            <innerInt>78</innerInt>
+                        </classField>
+                        <stringField>checking it up</stringField>
+                    </element>
+                </value>
+            </entry>
+        </value>
+    </entry>
 </TestList>
